@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is DateCounter</title>
+    <style type="text/css">
+    body{
+        text-align: center;
+        margin-top: 180px; ;
+
+    }
+    h1{
+        font-family: 楷体;
+    }
+    .font{
+    font-size: 23px;
+    font-family: 楷体;
+}
+    .text{
+        height: 1.5em;
+    }
+    #div1 {
+        padding: 12px;
+    }
+    #div3{
+        padding: 2em;;
+    }
+    .btn{
+        height: 25px;
+        width: 75px;
+        margin-right: 15%;
+    }
+
+    </style>
+</head>
+<body>
+   <h1>时间计算器</h1>   <hr>
+  <form action="{:url('index/index/counter')}" method="post">
+   <div id="div1">
+       <label class="font">请输入起始时间：</label>
+       <input type="text" name="startdata" vlaue="<?php  echo '123'; ?>" required="required" class="text" placeholder="格式：2017-3-25"> <br>
+       </div>
+
+      <div id="div2">
+       <label class="font">请输入结束时间：</label>
+       <input type="text" name="enddata"   class="text" placeholder="格式：2017-3-25"> <br>
+
+
+   </div>
+   <div id="div3">
+       <input type="submit" name="submit" value="提交" class="btn"> <br>
+   </div>
+      <div id="div4">
+          <label> </label>
+      </div>
+
+
+  </form>
+</body>
+</html>
