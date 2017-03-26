@@ -11,7 +11,9 @@ class Index extends Controller
     {
         return view();
     }
-
+    public function hello(){
+        echo "Hello World";
+    }
     public function counter()
     {
 
