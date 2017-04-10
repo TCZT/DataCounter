@@ -19,21 +19,21 @@ class Index extends Controller
 
         if($_POST and $_POST['submit']='submit'){
             trace('提交信息已获得');
-            if($_POST['startdata']&& $_POST['enddata']){
+            if($_POST['startdate']&& $_POST['enddate']){
                 trace('提交信息不为空');
                 //获取时间值
-                $startData = $_POST['startdata'];
-                $endData = $_POST['enddata'];
-                $stime = strtotime($startData);
-                $etime = strtotime($endData);
+                $startDate = $_POST['startdate'];
+                $endDate = $_POST['enddate'];
+                $stime = strtotime($startDate);
+                $etime = strtotime($endDate);
 
                 //判断转换是否正确
                 if($stime&&$etime) {
                     trace('格式正确') ;
                     $ctime = $etime - $stime;
-                    $cdata = $ctime/60/60/24;
+                    $cdate = $ctime/60/60/24;
                     echo '<br>';
-                    echo $startData.'与 '.$endData.'间隔['.$cdata.']天';
+                    echo $startDate.'与 '.$endDate.'间隔['.$cdate.']天';
                    // $this->assign('waitSecond','10');
                     $this->success('即将跳转回查询页面','index');
 

@@ -3,52 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>This is DateCounter</title>
-    <style type="text/css">
-    body{
-        text-align: center;
-        margin-top: 180px; ;
+    <style type="text/css" >
+        h1 strong{
+            color:#ac2925;
+        }
+        a:link {color:#FF0000;}		/* 未被访问的链接 */
+        a:visited {color:#00FF00;text-decoration:none;}	/* 已被访问的链接 */
+        a:hover {color:#FF00FF;}	/* 鼠标指针移动到链接上 */
+        a:active {color:#0000FF;}	/* 正在被点击的链接 */
+        table{ background-color:green;}
 
-    }
-    h1{
-        font-family: 楷体;
-    }
-    .font{
-    font-size: 23px;
-    font-family: 楷体;
-}
-    .text{
-        height: 1.5em;
-    }
-    #div1 {
-        padding: 12px;
-    }
-    #div3{
-        padding: 2em;;
-    }
-    .btn{
-        height: 25px;
-        width: 75px;
-        margin-right: 15%;
-    }
+        #red strong{
+            font-family: 华文楷体;
+        }
+        body{
+            text-align: center;
+            margin-top: 180px; ;
 
-    </style>
+        }
+        h1{
+            font-family: 楷体;
+        }
+        .font{
+            font-size: 23px;
+            font-family: 楷体;
+        }
+        .text{
+            height: 1.5em;
+        }
+        .bck{
+            background-image: url(/DataCounter/public/1.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment:fixed ;
+            padding: 23px;
+
+
+        }
+        #div1 {
+            padding: 12px;
+        }
+        #div3{
+            padding: 2em;;
+        }
+        .btn{
+            height: 25px;
+            width: 75px;
+            margin-right: 15%;
+        }
+        [name~="user"]{
+            color: #2e6da4;
+        }
+        #p{
+            white-space: pre-line ;
+        }
+
+       </style>
+
 </head>
 <body>
    <h1>时间计算器</h1>   <hr>
   <form action="{:url('index/index/counter')}" method="post">
+      <div class="bck">
    <div id="div1">
        <label class="font">请输入起始时间：</label>
-       <input type="text" name="startdata" vlaue="<?php  echo '123'; ?>" required="required" class="text" placeholder="格式：2017-3-25"> <br>
+       <input type="text" name="startdate" vlaue="123"  required="required" class="text" placeholder="格式：2017-3-25"> <br>
        </div>
 
       <div id="div2">
        <label class="font">请输入结束时间：</label>
-       <input type="text" name="enddata"   class="text" placeholder="格式：2017-3-25"> <br>
-
-
-   </div>
+       <input type="text" name="enddate"   class="text" placeholder="格式：2017-3-25"> <br>
+      </div>
+      </div>
    <div id="div3">
-       <input type="submit" name="submit" value="提交" class="btn"> <br>
+       <input type="submit" name="submit" value="提交" class="btn" onclick="return on_click"> <br>
    </div>
       <div id="div4">
           <label> </label>
@@ -56,5 +84,9 @@
 
 
   </form>
+<p id ='p'>AAAAAAA     AAAAAAAA
+    AAAa</p>
+   <h1>Zhang <strong>Teng</strong></h1>
+<p id="red" name="">我是默认字体 <strong>我是楷体</strong></p>
 </body>
 </html>
