@@ -19,37 +19,90 @@
     .text{
         height: 1.5em;
     }
-    #div1 {
-        padding: 12px;
+    .div1 {
+
+        padding: 16px;
+        position: absolute;
+        top:0px;
+        left: 0px;;
+        width: 100%;
+
+
     }
-    #div3{
-        padding: 2em;;
+    .div2{
+        position: relative;
+        padding-bottom: 12px;
+        margin: 0 auto;
+
     }
+
+
     .btn{
         height: 25px;
         width: 75px;
         margin-right: 15%;
     }
+    #bgImage{
+
+
+        background-image: url(/DataCounter/public/time.jpg);
+        background-repeat:no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        margin: 0 auto;
+
+    }
+    .form{
+        height: 150px;
+        position: relative;
+        display: block;
+        width: 30%;
+        margin: 0 auto
+    }
 
     </style>
 </head>
 <body>
-   <h1>时间计算器</h1>   <hr>
-  <form action="{:url('index/index/counter')}" method="post">
-   <div id="div1">
-       <label class="font">请输入起始时间：</label>
-       <input type="text" name="startdata" vlaue="<?php  echo '123'; ?>" required="required" class="text" placeholder="格式：2017-3-25"> <br>
-       </div>
+<script language="JavaScript">
+    function showDate() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth()+1;
+        var s = year+ "年 "+ month+"月 "+ date.getDate()+ "日 "+ date.getHours()+ "时 "+date.getMinutes()+"分 "+date.getSeconds()+"秒";
+        document.getElementById("label").innerText= s;
+    }
+    var t = setInterval(showDate,1000);  //定时器
 
-      <div id="div2">
-       <label class="font">请输入结束时间：</label>
-       <input type="text" name="enddata"   class="text" placeholder="格式：2017-3-25"> <br>
+</script>
+   <h1>时间计算器</h1>
+   <div id="divL">
+   <label id="label" >
+
+   </label>
+   </div >
+   <hr>
+  <form action="{:url('index/index/counter')}" method="post" class="form">
+   <div id="bgImage"></div>
+      <div class="div1">
+          <div id="div1" class="div2">
+              <label class="font">请输入起始时间：</label>
+              <input type="text" name="startdate" vlaue="<?php  echo '123'; ?>" required="required" class="text" placeholder="格式：2017.3.24"> <br>
+          </div>
+
+          <div id="div2" class="div2">
+              <label class="font">请输入结束时间：</label>
+              <input type="text" name="enddate"   class="text" placeholder="格式：2017.3.25"> <br>
+
+          </div>
 
 
-   </div>
-   <div id="div3">
+
+   <div clas="div2" style="position: absolute; margin-left: 17%"  >
        <input type="submit" name="submit" value="提交" class="btn"> <br>
    </div>
+      </div>
       <div id="div4">
           <label> </label>
       </div>
